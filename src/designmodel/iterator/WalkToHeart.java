@@ -8,7 +8,7 @@ import java.util.Iterator;
  * @date 2018/12/26 17:49
  **/
 
-public class WaltToHeart {
+public class WalkToHeart {
     private int index = -1;
     private String[] records = new String[10];
 
