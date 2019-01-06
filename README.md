@@ -1,5 +1,5 @@
 # java-learn-notes
-<certer>💗💗💗💗💗💗💗💗💗💗💗💗<br/></certer>
-<certer>Java 学习笔记<br/></certer>
-<certer>为面试做准备<br/></certer>
-<certer>💗💗💗💗💗💗💗💗💗💗💗💗<br/></certer>
+💗💗💗💗💗💗💗💗💗💗💗💗<br/>
+Java 学习笔记<br/>
+<center>为面试做准备<br/></center>
+💗💗💗💗💗💗💗💗💗💗💗💗<br/></certer>
