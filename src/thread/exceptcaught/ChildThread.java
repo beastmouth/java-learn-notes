@@ -1,4 +1,4 @@
-package thread;
+package thread.exceptcaught;
 
 import java.util.concurrent.Callable;
 

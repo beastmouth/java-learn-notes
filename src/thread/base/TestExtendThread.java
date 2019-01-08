@@ -1,4 +1,4 @@
-package thread;
+package thread.base;
 
 /**
  * 继承Thread类实现线程

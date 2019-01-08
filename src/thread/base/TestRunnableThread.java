@@ -1,4 +1,4 @@
-package thread;
+package thread.base;
 
 /**
  * 实现Runnable接口实现线程

@@ -1,4 +1,4 @@
-package thread;
+package thread.base;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

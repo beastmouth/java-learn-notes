@@ -1,4 +1,6 @@
-package thread;
+package thread.exceptcaught;
+
+import thread.exceptcaught.ChildThread;
 
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
