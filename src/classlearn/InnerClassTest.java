@@ -1,5 +1,6 @@
 package classlearn;
 
+
 /**
  * @author huang
  * @version 1.0
@@ -15,5 +16,6 @@ public class InnerClassTest {
 //        Outer.Inner inner = outer.new Inner();
 //        inner.sayHello();
 
+//        new Outer();
     }
 }
