@@ -1,5 +1,7 @@
 package sort;
 
+import java.util.Arrays;
+
 public class SortTest {
     public static void main(String[] args) {
         int[] array = new int[]{1, 2, 44, 32, 6, 12, 456, 2};
@@ -10,9 +12,10 @@ public class SortTest {
 //        int[] result = QuickSort.quickSort(array, 0, array.length - 1);
 //        int[] result = InsertionSort.insertionSort(array);
         int[] result = HeapSort.heapSort(array);
-        for (int temp : result) {
-            System.out.print(temp + "  ");
-        }
+//        for (int temp : result) {
+//            System.out.print(temp + "  ");
+//        }
+        System.out.println(Arrays.toString(result));
 
 //        int[] test = new int[]{10, 20, 30, 40};
 //        int i = 0;
