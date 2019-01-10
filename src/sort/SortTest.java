@@ -8,7 +8,8 @@ public class SortTest {
 //        int[] result = sort.BubbleSort.bubbleSortBetter1(array);
 //        int[] result = BubbleSort.cocktailSort(array);
 //        int[] result = QuickSort.quickSort(array, 0, array.length - 1);
-        int[] result = InsertionSort.insertionSort(array);
+//        int[] result = InsertionSort.insertionSort(array);
+        int[] result = HeapSort.heapSort(array);
         for (int temp : result) {
             System.out.print(temp + "  ");
         }
