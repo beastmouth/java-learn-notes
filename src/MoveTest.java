@@ -17,5 +17,11 @@ public class MoveTest {
         }else {
             System.out.println("222");
         }
+
+        final int MAXIMUM_CAPACITY = 1 << 30;
+        System.out.println("MAXIMUM_CAPACITY = " + MAXIMUM_CAPACITY);
+        final int DEFAULT_INITIAL_CAPACITY = 1 << 4;
+        System.out.println("DEFAULT_INITIAL_CAPACITY = " + DEFAULT_INITIAL_CAPACITY);
+
     }
 }
