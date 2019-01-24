@@ -17,9 +17,11 @@ public class ReadWriteLockTest {
             readThread.start();
             System.out.println("当前执行的读线程为：" + readThread.getName());
         }
-        WriteThread writeThread = new WriteThread(readWriteLock);
-        writeThread.start();
-        System.out.println("当前执行的写线程为：" + writeThread.getName());
+        for (int i = 0; i < 2; i++) {
+            WriteThread writeThread = new WriteThread(readWriteLock);
+            writeThread.start();
+            System.out.println("当前执行的写线程为：" + writeThread.getName());
+        }
         for (int i = 0; i < 3; i++) {
             ReadThread readThread = new ReadThread(readWriteLock);
             readThread.start();
