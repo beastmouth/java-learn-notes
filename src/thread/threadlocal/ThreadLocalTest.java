@@ -15,7 +15,6 @@ public class ThreadLocalTest {
      * 用ThreadLocal作为容器，当每个线程访问这个 userId 变量时，ThreadLocal会为每个线程提供一份变量，各个线程互不影响。
      */
     private static ThreadLocal<String> userId = ThreadLocal.withInitial(() -> "init_id");
-    private static ThreadLocal<String> can
 
     public static void main(String[] args) {
 //        threadLocalAlone();
