@@ -2,6 +2,7 @@ package datastructure.linkedlist;
 
 /**
  * 通过 LinkedList 单链表 判断回文
+ * 判断回文链表 快慢指针，反转链表  [也可以那一个数组或者栈来记录慢指针走的前半部分的数据，然后通过慢指针走完剩下的节点，并且对比]
  * @author huang
  * @version 1.0
  * @date 2019/01/31 15:48
