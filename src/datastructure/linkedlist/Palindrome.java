@@ -24,6 +24,9 @@ public class Palindrome {
     }
 
     private static Node initNode(String[] strs){
+        if (strs.length <= 0) {
+            return null;
+        }
         //头节点
         Node nodeHead = null;
         //当前节点
