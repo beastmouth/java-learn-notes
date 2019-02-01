@@ -21,8 +21,20 @@ public class Palindrome {
         printLinkList(head);
         Node midNode = findMidNode(head);
         checkIsPalindrome(head, midNode);
+
+        String[] strsRing = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
+        Node headRing = initNode(strsRing);
+        checkRing(headRing);
     }
 
+
+    /**
+     * 初始化链表
+     * 该方法仅针对无环链表
+     *
+     * @param strs data 数组
+     * @author hbj
+     */
     private static Node initNode(String[] strs){
         if (strs.length <= 0) {
             return null;
@@ -43,6 +55,14 @@ public class Palindrome {
         return nodeHead;
     }
 
+    /**
+     * 寻找链表的中间节点
+     * 该方法仅针对无环链表
+     *
+     * @param head 头节点
+     * @return Node 中间节点
+     * @author hbj
+     */
     private static Node findMidNode(Node head) {
         if (head == null) {
             return null;
@@ -64,6 +84,14 @@ public class Palindrome {
         return oneStep;
     }
 
+    /**
+     * 反转链表
+     * 该方法仅针对无环链表
+     *
+     * @param node 头节点
+     * @return Node 反转后的头节点
+     * @author hbj
+     */
     private static Node reversalLinkList(Node node) {
         if (node == null) {
             return null;
@@ -84,7 +112,19 @@ public class Palindrome {
         return headNode;
     }
 
+    /**
+     * 检验链表是否为回文链表
+     * 该方法仅针对无环链表
+     *
+     * @param headNode 头节点
+     * @param midNode 中间节点
+     * @author hbj
+     */
     private static void checkIsPalindrome(Node headNode, Node midNode) {
+        if (headNode.next == null) {
+            System.out.println("只有一个元素，不是回文链表");
+            return;
+        }
         Node node = reversalLinkList(midNode);
         boolean flag = true;
         while (headNode != midNode) {
@@ -101,6 +141,13 @@ public class Palindrome {
         }
     }
 
+    /**
+     * 打印链表
+     * 该方法仅针对无环链表
+     *
+     * @param node 头节点
+     * @author hbj
+     */
     private static void printLinkList(Node node) {
         StringBuilder sb = new StringBuilder();
         while (node != null) {
@@ -109,7 +156,40 @@ public class Palindrome {
             node = node.next;
         }
         System.out.println(sb.toString());
+    }
 
+    /**
+     * 检验链表是否存在环
+     *
+     * @param node 头节点
+     * @author hbj
+     * @date
+     */
+    private static void checkRing(Node node) {
+        if (node == null || node.next == null) {
+            System.out.println("链表不存在,无需校验环");
+            return;
+        }
+
+        Node oneStep = node;
+        Node twoStep = node;
+        while (true) {
+            if (twoStep.next == null) {
+                //直接就是当前的oneStep
+                System.out.println("链表不存在环");
+                break;
+            }
+            if (twoStep.next.next == null) {
+                System.out.println("链表不存在环");
+                break;
+            }
+            oneStep = oneStep.next;
+            twoStep = twoStep.next.next;
+            if (oneStep == twoStep) {
+                System.out.println("链表存在环");
+                break;
+            }
+        }
     }
 }
 
