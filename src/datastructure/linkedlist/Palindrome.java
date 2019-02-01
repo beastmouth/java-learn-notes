@@ -10,6 +10,12 @@ package datastructure.linkedlist;
 
 public class Palindrome {
     public static void main(String[] args) {
+        String[] strsa = new String[]{"1", "2", "3", "4", "5", "6", "7", "8"};
+        Node aaa = initNode(strsa);
+        Node result = reversalLinkList(aaa);
+        printLinkList(result);
+
+
         String[] strs = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
         Node head = initNode(strs);
         printLinkList(head);
@@ -56,9 +62,18 @@ public class Palindrome {
     }
 
     private static Node reversalLinkList(Node node) {
+        if (node == null) {
+            return null;
+        }
+
+        if (node.next == null) {
+            return node;
+        }
+
         Node headNode = node;
+        Node tempNode;
         while (node.next != null) {
-            Node tempNode = node.next;
+            tempNode = node.next;
             node.next = node.next.next;
             tempNode.next = headNode;
             headNode = tempNode;
