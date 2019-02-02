@@ -25,6 +25,12 @@ public class Palindrome {
         String[] strsRing = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
         Node headRing = initNode(strsRing);
         checkRing(headRing);
+//        int a = 1;
+//        int b = -8;
+//        a ^= b;
+//        b ^= a;
+//        a ^= b;
+//        System.out.println("a : " + a + "b : " + b);
     }
 
 
