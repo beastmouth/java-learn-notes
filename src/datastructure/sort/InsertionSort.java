@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 public class InsertionSort {
     public static int[] insertionSort(int[] array) {

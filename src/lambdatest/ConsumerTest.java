@@ -98,7 +98,7 @@ public class ConsumerTest {
 //        hbj.setAge(23);
 //
 //        User[] users = new User[]{gl, hbj};
-//        Arrays.sort(users, Comparator.comparing(User::getName));
+//        Arrays.datastructure.sort(users, Comparator.comparing(User::getName));
 //        Arrays.asList(users).forEach(System.out::println);
 
     }

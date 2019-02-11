@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 public class SelectSort {
     //首先在待排序序列中找到最小元素, 放在起始处,

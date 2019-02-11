@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 //不稳定的排序算法 基数和开始的地方要相反
 public class QuickSort {

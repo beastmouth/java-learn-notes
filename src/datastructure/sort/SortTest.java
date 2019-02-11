@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 import java.util.Arrays;
 
@@ -6,8 +6,8 @@ public class SortTest {
     public static void main(String[] args) {
         int[] array = new int[]{1, 2, 44, 32, 6, 12, 456, 2};
 //        int[] array = new int[]{30, 40, 60, 10, 20, 50};
-//        int[] result = sort.BubbleSort.bubbleSort(array);
-//        int[] result = sort.BubbleSort.bubbleSortBetter1(array);
+//        int[] result = datastructure.sort.BubbleSort.bubbleSort(array);
+//        int[] result = datastructure.sort.BubbleSort.bubbleSortBetter1(array);
 //        int[] result = BubbleSort.cocktailSort(array);
 //        int[] result = QuickSort.quickSort(array, 0, array.length - 1);
 //        int[] result = InsertionSort.insertionSort(array);

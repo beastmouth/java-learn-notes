@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 public class BubbleSort {
     // 最佳情况: T(n) = O(n), 最差情况: T(n) = O(n2), 平均情况: T(n) = O(n2)

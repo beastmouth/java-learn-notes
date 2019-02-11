@@ -1,4 +1,4 @@
-package sort;
+package datastructure.sort;
 
 /**
  * 堆排序
