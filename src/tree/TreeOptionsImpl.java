@@ -61,6 +61,13 @@ public class TreeOptionsImpl implements TreeOptions {
         return false;
     }
 
+    /**
+     * 中序遍历
+     *
+     * @param current 目前节点
+     * @author hbj
+     * @date 2019/01/07
+     */
     @Override
     public void infixOrder(TreeNode current) {
         if (current != null) {
@@ -70,6 +77,13 @@ public class TreeOptionsImpl implements TreeOptions {
         }
     }
 
+    /**
+     * 先序遍历
+     *
+     * @param current 目前节点
+     * @author hbj
+     * @date 2019/01/07
+     */
     @Override
     public void preOrder(TreeNode current) {
         if (current != null) {
@@ -79,6 +93,13 @@ public class TreeOptionsImpl implements TreeOptions {
         }
     }
 
+    /**
+     * 后序遍历
+     *
+     * @param current 目前节点
+     * @author hbj
+     * @date 2019/01/07
+     */
     @Override
     public void postOrder(TreeNode current) {
         if (current != null) {
