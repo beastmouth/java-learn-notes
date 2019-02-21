@@ -109,6 +109,13 @@ public class TreeOptionsImpl implements TreeOptions {
         }
     }
 
+    /**
+     * 层级遍历
+     *
+     * @param root 根节点
+     * @author hbj
+     * @date 2019/01/07
+     */
     @Override
     public void levelOrder(TreeNode root) {
         if (root == null) {
