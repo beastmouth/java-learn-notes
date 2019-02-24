@@ -8,7 +8,7 @@ package tree;
 public interface TreeOptions {
 
     /**
-     * 查找节点
+     * 二叉查找树查找节点
      *
      * @param root 根节点
      * @param key data值
@@ -19,7 +19,7 @@ public interface TreeOptions {
     TreeNode find(TreeNode root, int key);
 
     /**
-     * 插入节点
+     * 二叉查找树插入节点
      *
      * @param root 根节点
      * @param key data值
@@ -30,14 +30,15 @@ public interface TreeOptions {
     boolean insert(TreeNode root,int key);
 
     /**
-     * 删除节点
+     * 二叉查找树删除节点
      *
+     * @param root 根节点
      * @param key data值
      * @author hbj
      * @return boolean
      * @date 2019/01/07
      */
-    boolean delete(int key);
+    void delete(TreeNode root,int key);
 
     /**
      * 中序遍历
