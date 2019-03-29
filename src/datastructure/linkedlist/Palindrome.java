@@ -3,6 +3,7 @@ package datastructure.linkedlist;
 /**
  * 通过 LinkedList 单链表 判断回文
  * 判断回文链表 快慢指针，反转链表  [也可以那一个数组或者栈来记录慢指针走的前半部分的数据，然后通过慢指针走完剩下的节点，并且对比]
+ *
  * @author huang
  * @version 1.0
  * @date 2019/01/31 15:48
@@ -10,21 +11,33 @@ package datastructure.linkedlist;
 
 public class Palindrome {
     public static void main(String[] args) {
-        String[] strsa = new String[]{"1", "2", "3", "4", "5", "6", "7", "8"};
-        Node aaa = initNode(strsa);
-        Node result = reversalLinkList(aaa);
-        printLinkList(result);
+        String[] linkStrA = new String[]{"1", "3", "5", "7", "9", "12"};
+        Node aaa = initNode(linkStrA);
+        String[] linkStrB = new String[]{"2", "4", "6", "8", "10", "11", "13"};
+        Node bbb = initNode(linkStrB);
+        if (aaa != null && bbb != null) {
+            Node result = stitchingList(aaa, bbb);
+            printLinkList(result);
+        } else {
+            System.out.println("有一个或两个链表为空,无法进行拼接");
+        }
 
 
-        String[] strs = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
-        Node head = initNode(strs);
-        printLinkList(head);
-        Node midNode = findMidNode(head);
-        checkIsPalindrome(head, midNode);
-
-        String[] strsRing = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
-        Node headRing = initNode(strsRing);
-        checkRing(headRing);
+//        String[] strsa = new String[]{"1", "2", "3", "4", "5", "6", "7", "8"};
+//        Node aaa = initNode(strsa);
+//        Node result = reversalLinkList(aaa);
+//        printLinkList(result);
+//
+//
+//        String[] strs = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
+//        Node head = initNode(strs);
+//        printLinkList(head);
+//        Node midNode = findMidNode(head);
+//        checkIsPalindrome(head, midNode);
+//
+//        String[] strsRing = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
+//        Node headRing = initNode(strsRing);
+//        checkRing(headRing);
 //        int a = 1;
 //        int b = -8;
 //        a ^= b;
@@ -41,7 +54,7 @@ public class Palindrome {
      * @param strs data 数组
      * @author hbj
      */
-    private static Node initNode(String[] strs){
+    private static Node initNode(String[] strs) {
         if (strs.length <= 0) {
             return null;
         }
@@ -123,7 +136,7 @@ public class Palindrome {
      * 该方法仅针对无环链表
      *
      * @param headNode 头节点
-     * @param midNode 中间节点
+     * @param midNode  中间节点
      * @author hbj
      */
     private static void checkIsPalindrome(Node headNode, Node midNode) {
@@ -197,9 +210,55 @@ public class Palindrome {
             }
         }
     }
+
+    /**
+     * 拼接链表
+     * TODO 代码可优化
+     *
+     * @param a 拼接的第一个链表
+     * @param b 拼接的第二个链表
+     * @return Node
+     * @author hbj
+     * @date 2019/03/29
+     */
+    private static Node stitchingList(Node a, Node b) {
+        Node result;
+        Node returnResult;
+        if (Integer.parseInt(a.data) > Integer.parseInt(b.data)) {
+            result = new Node(b.data);
+            b = b.next;
+        } else {
+            result = new Node(a.data);
+            a = a.next;
+        }
+        returnResult = result;
+        while (a != null) {
+            Node tempNode;
+            if (b != null) {
+                if (Integer.parseInt(a.data) > Integer.parseInt(b.data)) {
+                    tempNode = new Node(b.data);
+                    result.next = tempNode;
+                    b = b.next;
+                    result = result.next;
+                } else {
+                    tempNode = new Node(a.data);
+                    result.next = tempNode;
+                    a = a.next;
+                    result = result.next;
+                }
+            } else {
+                result.next = a;
+                break;
+            }
+        }
+        if (b != null) {
+            result.next = b;
+        }
+        return returnResult;
+    }
 }
 
-class Node{
+class Node {
     String data;
     Node next;
 
