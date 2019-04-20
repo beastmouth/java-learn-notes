@@ -2,7 +2,8 @@
 本文内容：
 * 为什么HashMap申请内存空间都是2的倍数？
 * HashMap是如何降低hash冲突的
-* 冲突的解决方法<br/><br/><br/><br/>
+* 冲突的解决方法
+* HashMap序列化与反序列化<br/><br/><br/><br/>
 #### 为什么HashMap申请内存空间都是2的倍数？
 ##### 1. 由操作系统决定，这样能够避免内存碎片的产生
 ##### 2. 计算机擅长的是移位操作，不擅长加减乘除（移位操作效率更高）
@@ -170,3 +171,91 @@
         return newTab;
     }
 ```
+<br/><br/><br/><br/>
+#### HashMap序列化
+```java
+    private void writeObject(java.io.ObjectOutputStream s)
+        throws IOException {
+        // 初始数组的大小
+        int buckets = capacity();
+        // Write out the threshold, loadfactor, and any hidden stuff
+        s.defaultWriteObject();
+        s.writeInt(buckets);
+        // size 节点的数量
+        s.writeInt(size);
+        internalWriteEntries(s);
+    }
+```
+```java
+    // Called only from writeObject, to ensure compatible ordering.
+    void internalWriteEntries(java.io.ObjectOutputStream s) throws IOException {
+        Node<K,V>[] tab;
+        // 即遍历
+        if (size > 0 && (tab = table) != null) {
+            for (int i = 0; i < tab.length; ++i) {
+                for (Node<K,V> e = tab[i]; e != null; e = e.next) {
+                    // 不为空 序列化写入
+                    s.writeObject(e.key);
+                    s.writeObject(e.value);
+                }
+            }
+        }
+    }
+```
+#### HashMap反序列化
+```java
+    /**
+     * Reconstitute the {@code HashMap} instance from a stream (i.e.,
+     * deserialize it).
+     */
+    private void readObject(java.io.ObjectInputStream s)
+        throws IOException, ClassNotFoundException {
+        // Read in the threshold (ignored), loadfactor, and any hidden stuff
+        s.defaultReadObject();
+        reinitialize();
+        if (loadFactor <= 0 || Float.isNaN(loadFactor))
+            throw new InvalidObjectException("Illegal load factor: " +
+                                             loadFactor);
+        s.readInt();                // Read and ignore number of buckets
+        int mappings = s.readInt(); // Read number of mappings (size)
+        if (mappings < 0)
+            throw new InvalidObjectException("Illegal mappings count: " +
+                                             mappings);
+        else if (mappings > 0) { // (if zero, use defaults)
+            // Size the table using given load factor only if within
+            // range of 0.25...4.0
+            float lf = Math.min(Math.max(0.25f, loadFactor), 4.0f);
+            float fc = (float)mappings / lf + 1.0f;
+            int cap = ((fc < DEFAULT_INITIAL_CAPACITY) ?
+                       DEFAULT_INITIAL_CAPACITY :
+                       (fc >= MAXIMUM_CAPACITY) ?
+                       MAXIMUM_CAPACITY :
+                       tableSizeFor((int)fc));
+            float ft = (float)cap * lf;
+            threshold = ((cap < MAXIMUM_CAPACITY && ft < MAXIMUM_CAPACITY) ?
+                         (int)ft : Integer.MAX_VALUE);
+
+            // Check Map.Entry[].class since it's the nearest public type to
+            // what we're actually creating.
+            SharedSecrets.getJavaOISAccess().checkArray(s, Map.Entry[].class, cap);
+            @SuppressWarnings({"rawtypes","unchecked"})
+            Node<K,V>[] tab = (Node<K,V>[])new Node[cap];
+            table = tab;
+
+            // Read the keys and values, and put the mappings in the HashMap
+            for (int i = 0; i < mappings; i++) {
+                @SuppressWarnings("unchecked")
+                    K key = (K) s.readObject();
+                @SuppressWarnings("unchecked")
+                    V value = (V) s.readObject();
+                putVal(hash(key), key, value, false, false);
+            }
+        }
+    }
+```
+#### 为什么要序列化和反序列化
+##### 大家都知道HashMap存储是根据Key的hash值来计算出，键值对应该放在数组的哪个位置，
+##### 但是在不同的JVM中，得到的hash值不一定相同，
+##### 意思就是在windows下的虚拟机将key=‘1’计算出来的hash值可能是存在table的第0个位置的，
+##### 但是在linux环境下的虚拟机计算出来的key=‘1’的hash值可能是放在table的第1个位置，
+##### 当我们去读table中的值的时候未必能拿到key='1’的值。
