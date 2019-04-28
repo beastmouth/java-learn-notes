@@ -26,7 +26,7 @@ public class TestMain {
         System.out.println((end - begin) / 1000f);
     }
 
-    public static List<Category> queryKids(List<Category> sourceList, List<Category> resultList, Integer id, Integer level) {
+    private static List<Category> queryKids(List<Category> sourceList, List<Category> resultList, Integer id, Integer level) {
         // 此次查询的临时列表
         List<Category> tempQuery = new ArrayList<>();
         // 没有源列表 直接返回结果
