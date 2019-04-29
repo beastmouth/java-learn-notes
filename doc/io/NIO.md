@@ -1,4 +1,4 @@
-### NIO 网络模型 1：n (非阻塞I/O+Selector)
+### NIO 网络模型 1：n (非阻塞I/O+Selector) 【单线程的】 
 ![NIO](../../images/io/nio/NIO网络模型1.jpg)
 ##### 一个线程来处理客户端链接
 ##### 调用两个handler方法来处理链接的创建/读写业务的处理
@@ -24,3 +24,12 @@
 ![NIO编程实现步骤3](../../images/io/nio/NIO编程实现步骤3.jpg)
 ![NIO代码实现1](../../images/io/nio/代码实现1.jpg)
 ![NIO代码实现2](../../images/io/nio/代码实现2.jpg)
+<br/><br/>
+#### 总结
+![总结1](../../images/io/nio/总结1.jpg)
+![总结2](../../images/io/nio/总结2.jpg)
+![总结3](../../images/io/nio/总结3.jpg)
+![总结4](../../images/io/nio/总结4.jpg)
+![总结5](../../images/io/nio/总结5.jpg)
+![总结6](../../images/io/nio/总结6.jpg)
+![总结7](../../images/io/nio/总结7.jpg)

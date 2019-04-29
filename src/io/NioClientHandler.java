@@ -27,6 +27,7 @@ public class NioClientHandler implements Runnable {
         try {
             // 6. 循环等待新接入的链接
             for (; ; ) {
+                // 当没有channel的时候 也会有空轮询 造成cpu占用率100%
                 int readyChannels = selector.select();
                 if (readyChannels == 0) {
                     continue;
