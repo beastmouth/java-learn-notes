@@ -48,13 +48,13 @@ public class AVLNode {
 
     /**
      * 左左旋转
-     *       O
-     *     O
-     *   O
+     * O
+     * O
+     * O
      *
      * @param node 此时的根节点
-     * @author hbj
      * @return AVLNode
+     * @author hbj
      * @date 2019/01/07 17:25
      */
     private AVLNode leftLeftRotate(AVLNode node) {
@@ -69,13 +69,13 @@ public class AVLNode {
 
     /**
      * 右右旋转
-     *      O
-     *         O
-     *            O
+     * O
+     * O
+     * O
      *
      * @param node 此时的根节点
-     * @author hbj
      * @return AVLNode
+     * @author hbj
      * @date 2019/01/07 17:30
      */
     private AVLNode rightRightRotate(AVLNode node) {
@@ -90,13 +90,13 @@ public class AVLNode {
 
     /**
      * 左右旋转  先右右再坐坐
-     *       O
-     *     O
-     *       O
+     * O
+     * O
+     * O
      *
      * @param node 此时的根节点
-     * @author hbj
      * @return AVLNode
+     * @author hbj
      * @date 2019/01/07 17:31
      */
     private AVLNode leftRightRotate(AVLNode node) {
@@ -106,13 +106,13 @@ public class AVLNode {
 
     /**
      * 右左旋转 先左左再右右
-     *       O
-     *          O
-     *       O
+     * O
+     * O
+     * O
      *
      * @param node 此时的根节点
-     * @author hbj
      * @return AVLNode
+     * @author hbj
      * @date 2019/01/07 17:33
      */
     private AVLNode rightLeftRotate(AVLNode node) {
@@ -131,7 +131,7 @@ public class AVLNode {
         if (root.parent != null) {
             if (root.parent.leftChild == root) {
                 root.parent.leftChild = insertNode(root, val);
-            }else{
+            } else {
                 root.parent.rightChild = insertNode(root, val);
             }
         }
@@ -384,12 +384,6 @@ public class AVLNode {
 //        pRightSon.depth = calcDepth(pRightSon);
 //        pRightSon.balance = calcBalance(pRightSon);
 //    }
-
-
-
-
-
-
 
 
     public AVLNode getParent() {

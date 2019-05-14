@@ -8,6 +8,7 @@ package classinit;
 
 class Father {
     public static int t1 = 10;
+
     static {
         t1 = 20;
     }

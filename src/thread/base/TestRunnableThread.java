@@ -2,6 +2,7 @@ package thread.base;
 
 /**
  * 实现Runnable接口实现线程
+ *
  * @author huang
  * @version 1.0
  * @date 2019/01/08 13:56

@@ -18,6 +18,6 @@ public class WelcomeApp {
         welcomeThread.start();
         welcomeThread.run();
         welcomeThread.run();
-        System.out.println("1.Welcome! I am "+Thread.currentThread().getName());
+        System.out.println("1.Welcome! I am " + Thread.currentThread().getName());
     }
 }

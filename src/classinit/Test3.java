@@ -10,6 +10,7 @@ class FatherClass {
     static {
         System.out.println("FatherClass init");
     }
+
     public static int value1 = 10;
     public static final String value2 = "hello";
 }

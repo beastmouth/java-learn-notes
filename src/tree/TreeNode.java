@@ -17,7 +17,7 @@ public class TreeNode {
         this.data = data;
     }
 
-    public void display(){
+    public void display() {
         System.out.println(data);
     }
 

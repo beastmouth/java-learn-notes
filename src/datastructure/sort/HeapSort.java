@@ -2,6 +2,7 @@ package datastructure.sort;
 
 /**
  * 堆排序
+ *
  * @author huang
  * @version 1.0
  * @date 2019/01/09 21:03
@@ -22,7 +23,7 @@ public class HeapSort {
         return array;
     }
 
-    public static void adjustHeap(int[] array,int i, int length) {
+    public static void adjustHeap(int[] array, int i, int length) {
         int temp = array[i];
         for (int k = i * 2 + 1; k < length; k = k * 2 + 1) {
             if (k + 1 < length && array[k] < array[k + 1]) {
@@ -38,7 +39,7 @@ public class HeapSort {
         }
     }
 
-    public static void swap(int[] array,int a, int b) {
+    public static void swap(int[] array, int a, int b) {
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;

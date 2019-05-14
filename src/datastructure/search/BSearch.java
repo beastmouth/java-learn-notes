@@ -54,7 +54,7 @@ public class BSearch {
 
     /**
      * 二分查找变形问题
-     * */
+     */
     public static int bSearch3(int[] array, int n, int value) {
         //寻找第一个大于给定元素的数
         return bSearchInternally2(array, 0, n - 1, value);
@@ -62,7 +62,7 @@ public class BSearch {
 
     /**
      * 二分查找变形问题
-     * */
+     */
     private static int bSearchInternally2(int[] array, int low, int high, int value) {
         //寻找第一个大于给定元素的数
         if (low > high) {
@@ -94,7 +94,7 @@ public class BSearch {
 
     /**
      * 二分查找变形问题
-     * */
+     */
     public static int bSearch4(int[] array, int n, int value) {
         //寻找最后一个小于等于给定元素的数
         return bSearchInternally3(array, 0, n - 1, value);
@@ -102,7 +102,7 @@ public class BSearch {
 
     /**
      * 二分查找变形问题
-     * */
+     */
     private static int bSearchInternally3(int[] array, int low, int high, int value) {
         //寻找最后一个小于等于给定元素的数
         if (low > high) {

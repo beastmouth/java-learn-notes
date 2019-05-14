@@ -14,9 +14,9 @@ public class TreeOptionsImpl implements TreeOptions {
      * 二叉查找树查找节点
      *
      * @param root 根节点
-     * @param key data值
-     * @author hbj
+     * @param key  data值
      * @return treeNode
+     * @author hbj
      * @date 2019/01/07
      */
     @Override
@@ -42,9 +42,9 @@ public class TreeOptionsImpl implements TreeOptions {
      * 二月二十一号重写
      *
      * @param root 根节点
-     * @param key data值
-     * @author hbj
+     * @param key  data值
      * @return treeNode
+     * @author hbj
      * @date 2019/02/21
      */
     @Override
@@ -78,14 +78,14 @@ public class TreeOptionsImpl implements TreeOptions {
      * 二叉查找树删除节点
      *
      * @param key data值
-     * @author hbj
      * @return boolean
+     * @author hbj
      * @date 2019/02/21
      */
 //    @Override
 //    public boolean delete(TreeNode root,int key) {
-        //原来的代码  还要多考虑一个是否为左子树 比较复杂
-        //目前使用的是极客时间的代码
+    //原来的代码  还要多考虑一个是否为左子树 比较复杂
+    //目前使用的是极客时间的代码
 //        TreeNode deleteNode = root;
 //        TreeNode deleteNodeParent = null;
 //        boolean isLeft = false;
@@ -148,9 +148,8 @@ public class TreeOptionsImpl implements TreeOptions {
 //            }
 //        }
 //    }
-
     @Override
-    public void delete(TreeNode root,int data) {
+    public void delete(TreeNode root, int data) {
         //原来的代码  还要多考虑一个是否为左子树 比较复杂
         //目前使用的是极客时间的代码
         TreeNode p = root;

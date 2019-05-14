@@ -13,14 +13,17 @@ public class Palindrome {
     public static void main(String[] args) {
         String[] linkStrA = new String[]{"1", "3", "5", "7", "9", "12"};
         Node aaa = initNode(linkStrA);
-        String[] linkStrB = new String[]{"2", "4", "6", "8", "10", "11", "13"};
-        Node bbb = initNode(linkStrB);
-        if (aaa != null && bbb != null) {
-            Node result = stitchingList(aaa, bbb);
-            printLinkList(result);
-        } else {
-            System.out.println("有一个或两个链表为空,无法进行拼接");
-        }
+        aaa = reversalLinkList(aaa);
+        printLinkList(aaa);
+
+//        String[] linkStrB = new String[]{"2", "4", "6", "8", "10", "11", "13"};
+//        Node bbb = initNode(linkStrB);
+//        if (aaa != null && bbb != null) {
+//            Node result = stitchingList(aaa, bbb);
+//            printLinkList(result);
+//        } else {
+//            System.out.println("有一个或两个链表为空,无法进行拼接");
+//        }
 
 
 //        String[] strsa = new String[]{"1", "2", "3", "4", "5", "6", "7", "8"};
@@ -46,12 +49,12 @@ public class Palindrome {
 //        System.out.println("a : " + a + "b : " + b);
     }
 
-
     /**
      * 初始化链表
      * 该方法仅针对无环链表
      *
      * @param strs data 数组
+     * @return Node
      * @author hbj
      */
     private static Node initNode(String[] strs) {

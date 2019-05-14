@@ -21,7 +21,7 @@ public class WalkToHeart {
         records[index] = record;
     }
 
-    public Iterator<String> iterator(){
+    public Iterator<String> iterator() {
         return new Itr();
     }
 

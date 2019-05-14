@@ -1,7 +1,5 @@
 package thread.exceptcaught;
 
-import thread.exceptcaught.MyUncaughtExceptionHandler;
-
 import java.util.concurrent.ThreadFactory;
 
 /**

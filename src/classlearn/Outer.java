@@ -17,9 +17,10 @@ class Outer {
 
     /**
      * 静态内部类 只能引用外部类的静态成员变量
+     *
      * @author hbj
      */
-    static class StaticClass{
+    static class StaticClass {
         public void sayHello() {
             System.out.println("ZhuZhu`s static inner class age is " + age);
         }
@@ -27,10 +28,12 @@ class Outer {
 
     /**
      * 内部类
+     *
      * @author hbj
      */
-    class Inner{
+    class Inner {
         private String name = "zhuzhu 2";
+
         public void sayHello() {
             System.out.println("Hello , my name is " + name + " , outer name is " + Outer.this.name + " , my age is " + age);
         }
@@ -42,8 +45,8 @@ class Outer {
          * 局部内部类  只能在该方法里面使用
          * @author hbj
          */
-        class ZhuZhu{
-            public void zhuZhuMethod(){
+        class ZhuZhu {
+            public void zhuZhuMethod() {
                 System.out.println("ZhuZhu`s Anonymity Class , zhu zhu`s name is " + name);
             }
         }

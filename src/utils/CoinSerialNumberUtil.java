@@ -16,34 +16,34 @@ public class CoinSerialNumberUtil {
         System.out.println(Arrays.toString(billNums));
         for (char num : billNums) {
             switch (num) {
-                case CoinSerialConstant.ZERO_ASCII :
+                case CoinSerialConstant.ZERO_ASCII:
                     sb.append("A");
                     break;
-                case CoinSerialConstant.ONE_ASCII :
+                case CoinSerialConstant.ONE_ASCII:
                     sb.append("B");
                     break;
-                case CoinSerialConstant.TWO_ASCII :
+                case CoinSerialConstant.TWO_ASCII:
                     sb.append("C");
                     break;
-                case CoinSerialConstant.THREE_ASCII :
+                case CoinSerialConstant.THREE_ASCII:
                     sb.append("D");
                     break;
-                case CoinSerialConstant.FOUR_ASCII :
+                case CoinSerialConstant.FOUR_ASCII:
                     sb.append("E");
                     break;
-                case CoinSerialConstant.FIVE_ASCII :
+                case CoinSerialConstant.FIVE_ASCII:
                     sb.append("F");
                     break;
-                case CoinSerialConstant.SIX_ASCII :
+                case CoinSerialConstant.SIX_ASCII:
                     sb.append("G");
                     break;
-                case CoinSerialConstant.SEVEN_ASCII :
+                case CoinSerialConstant.SEVEN_ASCII:
                     sb.append("H");
                     break;
-                case CoinSerialConstant.EIGHT_ASCII :
+                case CoinSerialConstant.EIGHT_ASCII:
                     sb.append("I");
                     break;
-                case CoinSerialConstant.NINE_ASCII :
+                case CoinSerialConstant.NINE_ASCII:
                     sb.append("J");
                     break;
                 default:

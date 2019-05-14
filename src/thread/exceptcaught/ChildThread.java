@@ -17,7 +17,7 @@ public class ChildThread implements Callable<String> {
         return " test result";
     }
 
-    private void exceptionMethod(){
+    private void exceptionMethod() {
         throw new RuntimeException(" ChildThread exception");
     }
 }

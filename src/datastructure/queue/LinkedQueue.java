@@ -56,7 +56,7 @@ public class LinkedQueue {
 
 }
 
-class Node{
+class Node {
     String data;
     Node next;
 

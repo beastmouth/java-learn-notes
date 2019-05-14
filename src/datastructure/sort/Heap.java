@@ -6,6 +6,7 @@ import static datastructure.sort.HeapSort.swap;
 
 /**
  * 堆
+ *
  * @author huang
  * @version 1.0
  * @date 2019/03/13 16:04
@@ -32,17 +33,17 @@ public class Heap {
 
     public void insert(int data) {
         // 堆满了
-        if (count >= n){
+        if (count >= n) {
             return;
         }
         ++count;
         a[count] = data;
         int i = count;
         // 自下往上堆化
-        while (i/2 > 0 && a[i] > a[i/2]) {
+        while (i / 2 > 0 && a[i] > a[i / 2]) {
             // swap() 函数作用：交换下标为 i 和 i/2 的两个元素
-            swap(a, i, i/2);
-            i = i/2;
+            swap(a, i, i / 2);
+            i = i / 2;
         }
     }
 
@@ -62,13 +63,13 @@ public class Heap {
     private static void heapify(int[] a, int n, int i) {
         while (true) {
             int maxPos = i;
-            if (i*2 <= n && a[i] < a[i*2]){
-                maxPos = i*2;
+            if (i * 2 <= n && a[i] < a[i * 2]) {
+                maxPos = i * 2;
             }
-            if (i*2+1 <= n && a[maxPos] < a[i*2+1]){
-                maxPos = i*2+1;
+            if (i * 2 + 1 <= n && a[maxPos] < a[i * 2 + 1]) {
+                maxPos = i * 2 + 1;
             }
-            if (maxPos == i){
+            if (maxPos == i) {
                 break;
             }
             swap(a, i, maxPos);
@@ -77,7 +78,7 @@ public class Heap {
     }
 
     private static void buildHeap(int[] a, int n) {
-        for (int i = n/2; i >= 1; --i) {
+        for (int i = n / 2; i >= 1; --i) {
             heapify(a, n, i);
         }
     }

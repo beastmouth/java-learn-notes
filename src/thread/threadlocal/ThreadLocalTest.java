@@ -32,7 +32,7 @@ public class ThreadLocalTest {
     }
 
     private static void threadLocalAlone() {
-        Thread thread1 = new Thread(()->{
+        Thread thread1 = new Thread(() -> {
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
@@ -43,7 +43,7 @@ public class ThreadLocalTest {
             System.out.println("Thread1 set userId " + userId.get());
         });
 
-        Thread thread2 = new Thread(()->{
+        Thread thread2 = new Thread(() -> {
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {

@@ -53,7 +53,8 @@ public class ConsumerTest {
 //            1.Stream是元素的集合，这点让Stream看起来用些类似Iterator；
 //            2.可以支持顺序和并行的对原Stream进行汇聚的操作
             return y.stream().map(number -> {
-                return number > 5 ? 5 : number;}).collect(Collectors.toList());
+                return number > 5 ? 5 : number;
+            }).collect(Collectors.toList());
         };
         List<Integer> resultList = function1.apply(list);
         System.out.println();
@@ -76,7 +77,6 @@ public class ConsumerTest {
         User user = supplier.get();
 //        Consumer<User> consumer = x -> System.out::println;
         System.out.println("User info : name is " + user.getName() + " age is " + user.getAge());
-
 
 
 //        System.out.println("result：" + result);

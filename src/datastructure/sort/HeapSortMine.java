@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * 应用场景 ： 微博热搜TOP10 之类
+ *
  * @author huang
  * @version 1.0
  * @date 2019/04/03 11:00
@@ -16,8 +17,8 @@ public class HeapSortMine {
      * 构建大顶堆
      *
      * @param array 需要构建的数组
-     * @author hbj
      * @return int[] 大顶堆数组
+     * @author hbj
      * @date 2019/04/03
      */
     private static int[] buildHeap(int[] array) {
@@ -41,8 +42,8 @@ public class HeapSortMine {
     /**
      * 调整大顶堆
      *
-     * @param array 需要调整的数组
-     * @param i 调整的起始位置
+     * @param array  需要调整的数组
+     * @param i      调整的起始位置
      * @param length 数组的长度
      * @author hbj
      * @date 2019/04/03
@@ -65,7 +66,7 @@ public class HeapSortMine {
         }
     }
 
-    private static void swap(int[] array,int a, int b) {
+    private static void swap(int[] array, int a, int b) {
         int temp = array[a];
         array[a] = array[b];
         array[b] = temp;

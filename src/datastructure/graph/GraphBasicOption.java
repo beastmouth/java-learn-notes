@@ -1,7 +1,6 @@
 package datastructure.graph;
 
 
-
 /**
  * @author huang
  * @version 1.0
@@ -12,7 +11,7 @@ public class GraphBasicOption {
 
 }
 
-class GraphNode{
+class GraphNode {
     private String uid;
     private GraphNode next;
 }

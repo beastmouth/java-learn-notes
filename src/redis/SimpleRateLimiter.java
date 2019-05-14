@@ -44,7 +44,7 @@ public class SimpleRateLimiter {
     }
 
     public static void main(String[] args) {
-        Jedis jedis = new Jedis("192.168.99.100",6379);
+        Jedis jedis = new Jedis("192.168.99.100", 6379);
         SimpleRateLimiter simpleRateLimiter = new SimpleRateLimiter(jedis);
         for (int i = 0; i < 20; i++) {
             System.out.println(simpleRateLimiter.isActionAllowed("hbj", "reply", 60, 5));
