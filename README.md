@@ -6,7 +6,7 @@
 
 - **Java基础**
   - **[io](/doc/io)**
-  - **[hashmap](/doc/hashmap)**
+  - **[hashmap](/doc/javabase/hashmap)**
 - **[MySQL](/doc/mysql)**
 - **[Redis](/doc/redis)**
 - **[RabbitMQ](/doc/rabbitmq)**
