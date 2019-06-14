@@ -8,6 +8,6 @@
   - **[io](/doc/io)**
   - **[hashmap](/doc/javabase/hashmap)**
 - **[MySQL](/doc/mysql)**
-- **[Redis](/doc/redis)**
+- **[Redis](/doc/redis/Redis大纲.md)**
 - **[RabbitMQ](/doc/rabbitmq)**
 
