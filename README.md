@@ -9,7 +9,7 @@
   - **[😁hashmap](/doc/java/javabase/hashmap)**
 - **[😊MySQL](/doc/mysql)**
   - **[😊逻辑架构](/doc/mysql/MySQL逻辑架构.md)**
-  - **[😊索引](/doc/mysql/MySQL索引.md)**
+  - **[😊索引基本知识](/doc/mysql/MySQL索引.md)**
   - **[😊事务](/doc/mysql/MySQL事务.md)**
 - **[😋Redis](/doc/redis/Redis大纲.md)**
 - **[😜RabbitMQ](/doc/rabbitmq)**
