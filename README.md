@@ -8,6 +8,8 @@
   - **[😍io](/doc/java/io)**
   - **[😁hashmap](/doc/java/javabase/hashmap)**
 - **[😊MySQL](/doc/mysql)**
+  - **[😊逻辑架构](/doc/mysql/MySQL逻辑架构.md)**
+  - **[😊索引](/doc/mysql/MySQLI索引.md)**
 - **[😋Redis](/doc/redis/Redis大纲.md)**
 - **[😜RabbitMQ](/doc/rabbitmq)**
 - **[🤣Docker](/doc/docker)**
