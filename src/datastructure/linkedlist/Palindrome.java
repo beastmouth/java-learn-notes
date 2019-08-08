@@ -11,10 +11,10 @@ package datastructure.linkedlist;
 
 public class Palindrome {
     public static void main(String[] args) {
-        String[] linkStrA = new String[]{"1", "3", "5", "7", "9", "12"};
-        Node aaa = initNode(linkStrA);
-        aaa = reversalLinkList(aaa);
-        printLinkList(aaa);
+//        String[] linkStrA = new String[]{"1", "3", "5", "7", "9", "12"};
+//        Node aaa = initNode(linkStrA);
+//        aaa = reversalLinkList(aaa);
+//        printLinkList(aaa);
 
 //        String[] linkStrB = new String[]{"2", "4", "6", "8", "10", "11", "13"};
 //        Node bbb = initNode(linkStrB);
@@ -32,10 +32,11 @@ public class Palindrome {
 //        printLinkList(result);
 //
 //
-//        String[] strs = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
-//        Node head = initNode(strs);
-//        printLinkList(head);
-//        Node midNode = findMidNode(head);
+        String[] strs = new String[]{"1", "2", "3", "4", "5", "4", "3", "2", "1"};
+        Node head = initNode(strs);
+        printLinkList(head);
+        Node midNode = findMidNode(head);
+        System.out.println("midNode = " + midNode.data);
 //        checkIsPalindrome(head, midNode);
 //
 //        String[] strsRing = new String[]{"1", "2", "3", "4", "4", "3", "2", "1"};
@@ -91,19 +92,33 @@ public class Palindrome {
         }
         Node oneStep = head;
         Node twoStep = head;
-        while (true) {
-            if (twoStep.next == null) {
-                //直接就是当前的oneStep
-                break;
-            }
-            if (twoStep.next.next == null) {
-                oneStep = oneStep.next;
-                break;
-            }
-            oneStep = oneStep.next;
-            twoStep = twoStep.next.next;
-        }
+        oneStep = findMidNodeRecursion(oneStep, twoStep);
+//        while (true) {
+//            if (twoStep.next == null) {
+//                直接就是当前的oneStep
+//                break;
+//            }
+//            if (twoStep.next.next == null) {
+//                oneStep = oneStep.next;
+//                break;
+//            }
+//            oneStep = oneStep.next;
+//            twoStep = twoStep.next.next;
+//        }
         return oneStep;
+    }
+
+    private static Node findMidNodeRecursion(Node oneStep, Node twoStep) {
+        if (twoStep.next == null) {
+            return oneStep;
+        }
+        if (twoStep.next.next == null) {
+            oneStep = oneStep.next;
+            return oneStep;
+        }
+        oneStep = oneStep.next;
+        twoStep = twoStep.next.next;
+        return findMidNodeRecursion(oneStep, twoStep);
     }
 
     /**
