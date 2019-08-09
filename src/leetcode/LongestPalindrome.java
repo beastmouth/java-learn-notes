@@ -79,16 +79,17 @@ public class LongestPalindrome {
                 while (s.charAt(tempHead) == s.charAt(tempTail)) {
                     tempHead++;
                     tempTail--;
+                    String substring = s.substring(head, head + length);
                     if (tempHead > tempTail) {
-                        return s.substring(head, head + length);
+                        return substring;
                     }
                     if (tempHead == tempTail) {
                         // 奇数个回文字符串
-                        return s.substring(head, head + length);
+                        return substring;
                     }
                     if (tempHead == tempTail - 1) {
                         if (s.charAt(tempHead) == s.charAt(tempTail)) {
-                            return s.substring(head, head + length);
+                            return substring;
                         } else {
                             break;
                         }
@@ -102,7 +103,7 @@ public class LongestPalindrome {
     }
 
     public static void main(String[] args) {
-        String str = "bb";
+        String str = "abcba";
         System.out.println(longestPalindrome2(str));
     }
 }
