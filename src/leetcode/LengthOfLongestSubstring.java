@@ -7,6 +7,12 @@ package leetcode;
  * @date 2019/8/8 18:57
  */
 public class LengthOfLongestSubstring {
+    /**
+     * 时间消耗过大！！！
+     *
+     * @param s 需要鉴定的字符串
+     * @return 无重复的最长子串长度
+     */
     public static int lengthOfLongestSubstring(String s) {
         if (s.length() == 1) {
             return 1;
@@ -40,6 +46,7 @@ public class LengthOfLongestSubstring {
 
     /**
      * 大佬代码
+     *
      * @param s 字符串
      * @return 最长字符串长度
      */
@@ -54,7 +61,7 @@ public class LengthOfLongestSubstring {
             if (temp != tail) {
                 head = temp + 1;
             }
-            max = max > (tail-head) ? max : (tail-head);
+            max = max > (tail - head) ? max : (tail - head);
             tail++;
         }
         return max + 1;
